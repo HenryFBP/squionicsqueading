@@ -1,5 +1,7 @@
 # squionicsqueading
 
+![Screenshot](img.png)
+
 https://github.com/henryfbp/squionicsqueading
 
 bionic reading except free, wow. le million dollar code.

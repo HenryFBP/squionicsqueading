@@ -13,4 +13,9 @@ Because it was too easy
 ## instructions:
 
 copy-paste [this whole file](./squionicsqueading.js) into Chrome console (F12 key)
+
 and enjoy le open sauce 
+
+## issues
+
+- destroys `<a href>` - links broken

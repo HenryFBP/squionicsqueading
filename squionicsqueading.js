@@ -3,17 +3,14 @@
 
 // inspired by https://bionic-reading.com/
 
-
 // instructions:
 // copy-paste this whole file into Chrome console (F12 key)
 // and enjoy le open sauce 
 
-// kekw
-
 // user editable parameters
 
-gimmeBold = true
-gimmeItalic = false
+var gimmeBold = true
+var gimmeItalic = false
 
 // end of user editable parameters
 
@@ -46,6 +43,7 @@ function italicHTML(it) {
  */
 function squionifyText(textBlock) {
     var splitText = textBlock.split(' ')
+    var splitLocation = 1
 
     var returnHTML = ""
 
@@ -53,18 +51,31 @@ function squionifyText(textBlock) {
     for (let index = 0; index < splitText.length; index++) {
         const word = splitText[index];
 
-        if (word.length <= 1) { //too small to bold/italicize/whatever
+        if (word.length <= splitLocation) { //too small to bold/italicize/whatever
             returnHTML += word
         } else { //big enuf
-            returnHTML += (
-                boldHTML(word.substring(0, 1)) +
-                word.substring(1, word.length)
-            )
+
+            var firstPart = word.substring(0, splitLocation)
+
+            var secondPart = word.substring(splitLocation, word.length)
+
+            if (gimmeBold) {
+                secondPart = boldHTML(secondPart)
+            }
+
+            if (gimmeItalic) {
+                secondPart = italicHTML(secondPart)
+            }
+
+            returnHTML += (firstPart + secondPart)
         }
 
         returnHTML += " "
 
     }
+
+    console.log("returnin dis:")
+    console.log(returnHTML)
 
     return returnHTML
 }

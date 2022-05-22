@@ -21,3 +21,4 @@ and enjoy le open sauce
 ## issues
 
 - destroys `<a href>` - links broken
+- looks like shit on some fonts

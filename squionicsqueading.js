@@ -7,10 +7,16 @@
 // copy-paste this whole file into Chrome console (F12 key)
 // and enjoy le open sauce 
 
-// user editable parameters
+// user editable parameters (  that's you, please edit these :3c  )
 
+//display options
 var gimmeBold = true
 var gimmeItalic = false
+var gimmeUnderline = true
+
+//splitting options
+var highlightOnlyFirstLetter = false //if this is false, we just highlight the first third of letters per word.
+var splitRatio = (1/3)
 
 // end of user editable parameters
 
@@ -36,6 +42,10 @@ function italicHTML(it) {
     return wrapWithHTML(it, 'i')
 }
 
+function underlineHTML(it) {
+    return wrapWithHTML(it, 'u')
+}
+
 /**
  * 
  * @param {String} textBlock a block of text (NOT html!) to make squionic
@@ -43,13 +53,20 @@ function italicHTML(it) {
  */
 function squionifyText(textBlock) {
     var splitText = textBlock.split(' ')
-    var splitLocation = 1
+
 
     var returnHTML = ""
 
     //for all words,
     for (let index = 0; index < splitText.length; index++) {
         const word = splitText[index];
+
+        var splitLocation;
+        if (highlightOnlyFirstLetter) {
+            splitLocation = 1
+        } else {
+            splitLocation = Math.ceil(word.length * splitRatio)
+        }
 
         if (word.length <= splitLocation) { //too small to bold/italicize/whatever
             returnHTML += word
@@ -60,11 +77,15 @@ function squionifyText(textBlock) {
             var secondPart = word.substring(splitLocation, word.length)
 
             if (gimmeBold) {
-                secondPart = boldHTML(secondPart)
+                firstPart = boldHTML(firstPart)
             }
 
             if (gimmeItalic) {
-                secondPart = italicHTML(secondPart)
+                firstPart = italicHTML(firstPart)
+            }
+
+            if (gimmeUnderline) {
+                firstPart = underlineHTML(firstPart)
             }
 
             returnHTML += (firstPart + secondPart)

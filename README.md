@@ -22,3 +22,4 @@ and enjoy le open sauce
 
 - destroys `<a href>` - links broken
 - looks like shit on some fonts
+- may not work on all element types (i.e. `p span b i pre code`)

@@ -12,5 +12,5 @@ Because it was too easy
 
 ## instructions:
 
-copy-paste this whole file into Chrome console (F12 key)
+copy-paste [this whole file](./squionicsqueading.js) into Chrome console (F12 key)
 and enjoy le open sauce 

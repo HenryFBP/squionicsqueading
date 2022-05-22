@@ -2,11 +2,11 @@
 
 https://github.com/henryfbp/squionicsqueading
 
-bionic reading except free, wow
+bionic reading except free, wow. le million dollar code.
 
 inspired by https://bionic-reading.com/
 
-Inspired by https://twitter.com/goodraboy/status/1528499605167648769
+and also inspired by https://twitter.com/goodraboy/status/1528499605167648769
 
 Because it was too easy
 
